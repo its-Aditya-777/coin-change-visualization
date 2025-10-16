@@ -1,12 +1,18 @@
 document.getElementById("startBtn").addEventListener("click", startVisualization);
 
-const denominations = [25, 10, 5, 1]; // You can change this to [10, 5, 2, 1] for INR
+// const denominations = [25, 10, 5, 1]; // You can change this to [10, 5, 2, 1] for INR
+function getDenominations() {
+  const system = document.getElementById("coinSystem").value;
+  return system === "canonical" ? [25, 10, 5, 1] : [4, 3, 1];
+}
+
 
 function startVisualization() {
   const algo = document.getElementById("algorithm").value;
   const amount = parseInt(document.getElementById("amount").value);
   const visual = document.getElementById("visual");
   const result = document.getElementById("result");
+  const denominations = getDenominations();
 
   visual.innerHTML = "";
   result.innerHTML = "";
@@ -17,9 +23,9 @@ function startVisualization() {
   }
 
   if (algo === "greedy") {
-    greedyVisualization(amount, visual, result);
+    greedyVisualization(amount, visual, result, denominations);
   } else {
-    dpVisualization(amount, visual, result);
+    dpVisualization(amount, visual, result, denominations);
   }
 }
 
@@ -27,7 +33,7 @@ function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function greedyVisualization(amount, visual, result) {
+async function greedyVisualization(amount, visual, result, denominations){
   let remaining = amount;
   let steps = [];
   result.innerHTML = `<p>🔹 Using <b>Greedy Choice</b> Algorithm...</p>`;
@@ -45,7 +51,7 @@ async function greedyVisualization(amount, visual, result) {
   result.innerHTML += `<p>Total coins = ${steps.length}</p>`;
 }
 
-async function dpVisualization(amount, visual, result) {
+async function dpVisualization(amount, visual, result, denominations){
   result.innerHTML = `<p>🔸 Using <b>Dynamic Programming</b> (Optimal) Approach...</p>`;
   let dp = new Array(amount + 1).fill(Infinity);
   let parent = new Array(amount + 1).fill(-1);

@@ -1,45 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coin Change Visualization – Greedy vs Dynamic Programming</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3239/3239978.png" type="image/png">
-</head>
-<body>
-  <div class="container">
-    <h1>💰 Coin Change Visualization</h1>
-    <p>Compare <b>Greedy Choice</b> and <b>Dynamic Programming</b> approaches interactively.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Change Visualization – Greedy vs Dynamic Programming</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/3239/3239978.png"
+      type="image/png"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>💰 Coin Change Visualization</h1>
+      <p>
+        Compare <b>Greedy Choice</b> and <b>Dynamic Programming</b> approaches
+        interactively.
+      </p>
 
-    <div class="controls">
-      <div class="control-row">
-        <label><img src="https://cdn-icons-png.flaticon.com/512/711/711284.png" alt="algorithm" class="icon"> Algorithm:</label>
-        <select id="algorithm">
-          <option value="greedy">Greedy Choice</option>
-          <option value="dp">Dynamic Programming</option>
-        </select>
+      <div class="controls">
+        <div class="control-row">
+          <label
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/711/711284.png"
+              alt="algorithm"
+              class="icon"
+            />
+            Algorithm:</label
+          >
+          <select id="algorithm">
+            <option value="greedy">Greedy Choice</option>
+            <option value="dp">Dynamic Programming</option>
+          </select>
+        </div>
+
+        <div class="control-row">
+          <label
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/3658/3658691.png"
+              alt="amount"
+              class="icon"
+            />
+            Target Amount:</label
+          >
+          <input
+            type="number"
+            id="amount"
+            placeholder="Enter amount (e.g. 63)"
+          />
+        </div>
+
+        <!-- 🔽 NEW: Coin system selector -->
+        <div class="control-row">
+          <label
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/2290/2290367.png"
+              alt="coins"
+              class="icon"
+            />
+            Coin System:</label
+          >
+          <select id="coinSystem">
+            <option value="canonical" selected>Canonical [1, 5, 10, 25]</option>
+            <option value="noncanonical">Non-canonical [1, 3, 4]</option>
+          </select>
+        </div>
+
+        <button id="startBtn">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/727/727245.png"
+            class="icon"
+            alt="start"
+          />
+          Start Visualization
+        </button>
       </div>
 
-      <div class="control-row">
-        <label><img src="https://cdn-icons-png.flaticon.com/512/3658/3658691.png" alt="amount" class="icon"> Target Amount:</label>
-        <input type="number" id="amount" placeholder="Enter amount (e.g. 63)" />
-      </div>
-
-      <button id="startBtn">
-        <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" class="icon" alt="start">
-        Start Visualization
-      </button>
+      <div class="visual-area" id="visual"></div>
+      <div class="result" id="result"></div>
     </div>
 
-    <div class="visual-area" id="visual"></div>
-    <div class="result" id="result"></div>
-  </div>
+    <footer>
+      <p>
+        Created by Aditya Verma (2024UCA1852) — DAA Project | Topic: Greedy
+        Choice
+      </p>
+    </footer>
 
-  <footer>
-    <p>Created by Aditya Verma (2024UCA1852) — DAA Project | Topic: Greedy Choice</p>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
