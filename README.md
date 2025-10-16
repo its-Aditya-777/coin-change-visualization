@@ -16,9 +16,9 @@ Visualization of Greedy vs DP Coin Change Algorithms
 
 ### 🔗 Option 1: GitHub Pages
 Open directly in your browser:  
-👉 [https://yourusername.github.io/coin-change-visualization](https://yourusername.github.io/coin-change-visualization)
+👉 [https://its-aditya-777.github.io/coin-change-visualization/]
 
 ### 🖥️ Option 2: Local
 ```bash
-git clone https://github.com/yourusername/coin-change-visualization.git
+git clone https://github.com/its-Aditya-777/coin-change-visualization.git
 cd coin-change-visualization
