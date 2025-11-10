@@ -91,16 +91,6 @@ async function dpVisualization(amount, visual, result, denominations){
 
 }
 
-// function showCoin(visual, value) {
-//   const coin = document.createElement("div");
-//   coin.classList.add("coin");
-//   coin.innerHTML = `<svg width="40" height="40" viewBox="0 0 512 512">
-//       <circle cx="256" cy="256" r="200" fill="#ffca28" stroke="#f57f17" stroke-width="12"/>
-//       <text x="50%" y="55%" text-anchor="middle" fill="#6d4c41" font-size="130" font-family="Arial" dy=".3em">${value}</text>
-//     </svg>`;
-//   visual.appendChild(coin);
-//   setTimeout(() => coin.classList.add("used"), 150);
-// }
 function showCoin(visual, value, algoType) {
   const coin = document.createElement("div");
   coin.classList.add("coin");
